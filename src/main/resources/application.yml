@@ -9,7 +9,11 @@ server:
     max-threads: 100
     uri-encoding: UTF-8
 
+# [Spring]
 spring:
+  application:
+    # 应用名称
+    name: Global Region
   thymeleaf:
     cache: false
     prefix: classpath:/templates/
@@ -21,7 +25,12 @@ spring:
   #profiles:
     #active: prod
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/test
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/invest_imps?serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
     username: root
     password: root
+
+# [Mybatis]
+mybatis:
+  mapper-locations: classpath*:/com/littlefox/**/mysql/*.xml
+  type-aliases-package: com.littlefox.**.model

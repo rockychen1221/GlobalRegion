@@ -13,6 +13,6 @@ public interface AreaMapper {
      * @param params {id:'省市', country:'国家',langType:'zh_CN'}
      * @return ProvinceDepend
      */
-    List<Area> findProvinceListByIdAndCountry(Map<String, String> params);
+    List<Area> selectAreaList(Map<String, String> params);
 
 }

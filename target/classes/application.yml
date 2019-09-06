@@ -1,0 +1,36 @@
+#----------------DEV Environment----------------
+# [Server]
+server:
+  address: 127.0.0.1
+  port: 8080 # 服务绑定的端口，不写默认是8080
+  servlet:
+    context-path: /demo # 服务的路径，不写默认为空
+  tomcat:
+    max-threads: 100
+    uri-encoding: UTF-8
+
+# [Spring]
+spring:
+  application:
+    # 应用名称
+    name: Global Region
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    mode: LEGACYHTML5
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+
+  #profiles:
+    #active: prod
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.1.187:3306/invest_imps?serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
+    username: root
+    password: data68868569
+
+# [Mybatis]
+mybatis:
+  mapper-locations: classpath*:/com/littlefox/**/mysql/*.xml
+  type-aliases-package: com.littlefox.**.model

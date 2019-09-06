@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">Global Region</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" href="../../static/plugins/bootstrap/css/bootstrap.min.css"
+          th:href="@{/plugins/bootstrap/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" href="../../static/plugins/bootstrap/css/components.min.css"
+          th:href="@{/plugins/bootstrap/css/components.min.css}"/>
+    <link href="../../static/plugins/bootstrap-select/css/bootstrap-select.min.css" rel="stylesheet"
+          type="text/css" th:href="@{/plugins/bootstrap-select/css/bootstrap-select.min.css}"/>
+</head>
+<body layout:fragment="content">
+<h2>
+    世界各国是指世界上各个国家，截至2019年，世界上共有233个国家和地区，其中国家有195个，地区有38个。
+</h2>
+<form action="#" id="form_sample_1" class="form-horizontal" novalidate="novalidate">
+    <div class="form-body">
+        <div class="alert alert-danger display-hide">
+            <button class="close" data-close="alert"></button> You have some form errors. Please check below. </div>
+        <div class="alert alert-success display-hide">
+            <button class="close" data-close="alert"></button> Your form validation is successful! </div>
+        <div class="form-group">
+            <label class="control-label col-md-3">
+                姓名
+            </label>
+            <div class="col-md-4">
+                <input type="text" name="name" data-required="1" class="form-control" value="rockychen"> </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-3">
+                电邮
+            </label>
+            <div class="col-md-4">
+                <input name="email" type="text" class="form-control" value="rockychen1221@163.com"> </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-3">
+                故乡
+            </label>
+            <div class="col-md-9">
+                <input type="hidden" id="fromArea" class="bs-select" value="101,10118,1011803,101180304,">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-3">
+                工作地
+            </label>
+            <div class="col-md-9">
+                <input type="hidden" id="fromAreaCurr" class="bs-select" value="101,10109,1010913,">
+            </div>
+        </div>
+    </div>
+    <div class="form-actions">
+        <div class="row">
+            <div class="col-md-offset-3 col-md-9">
+                <button type="button" class="btn green">确定</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script src="../../static/plugins/jquery.min.js"
+        th:src="@{'/plugins/jquery.min.js'}"></script>
+<script src="../../static/plugins/bootstrap/js/bootstrap.min.js"
+        th:src="@{'/plugins/bootstrap/js/bootstrap.min.js'}"></script>
+<script src="../../static/plugins/bootstrap-select/js/bootstrap-select.min.js"
+        th:src="@{'/plugins/bootstrap-select/js/bootstrap-select.min.js'}"></script>
+<script src="../../static/plugins/bootstrap-select/js/i18n/defaults-zh_CN.min.js"
+        th:src="@{'/plugins/bootstrap-select/js/i18n/defaults-zh_CN.min.js'}"></script>
+<script src="../../static/scripts/area/area.js"
+        th:src="@{'/scripts/area/area.js'}"></script>
+<script>
+    Area.initFromArea();
+    Area.initFromArea("fromAreaCurr");
+    jQuery(".green").click(function () {
+        alert("故乡"+jQuery("#fromArea").val());
+        alert("工作地"+jQuery("#fromAreaCurr").val());
+    });
+</script>
+</body>
+</html>

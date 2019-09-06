@@ -6,7 +6,9 @@ import com.littlefox.area.service.AreaService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class AreaServiceImpl implements AreaService {
@@ -14,9 +16,19 @@ public class AreaServiceImpl implements AreaService {
     @Resource
     private AreaMapper areaMapper;
 
-
     @Override
-    public List<Area> findProvinceListByIdAndCountry(String id, String level, String langType) {
-        return null;
+    public List<Area> selectAreaList(String id, String level, String langType) {
+        String zero = "0";
+
+        //Assert.notNull(entities, "Cannot insert 'null' as a List.");
+
+        Map<String, String> params = new HashMap<String, String>(4){{
+            put("id", id);
+            put("len", String.valueOf(id.length()));
+            put("level", level);
+            put("langType", langType);
+        }};
+
+        return areaMapper.selectAreaList(params);
     }
 }

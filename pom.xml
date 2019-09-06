@@ -11,6 +11,7 @@
     <groupId>com.littlefox</groupId>
     <artifactId>global-area</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
     <name>region</name>
     <description>Demo project for Spring Boot</description>
 
@@ -62,6 +63,23 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
+
+
+
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+            <!--web jar-->
+            <resource>
+                <directory>src/main/resources</directory>
+                <!--<targetPath>META-INF/resources/</targetPath>-->
+            </resource>
+        </resources>
     </build>
 
 </project>

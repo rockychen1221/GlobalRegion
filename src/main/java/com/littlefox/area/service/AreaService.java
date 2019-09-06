@@ -16,5 +16,5 @@ public interface AreaService {
      * @param langType
      * @return ProvinceDepend
      */
-    List<Area> findProvinceListByIdAndCountry(String id, String level, String langType);
+    List<Area> selectAreaList(String id, String level, String langType);
 }
