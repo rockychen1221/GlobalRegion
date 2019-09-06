@@ -1,0 +1,27 @@
+#----------------DEV Environment----------------
+# [Server]
+server:
+  address: 127.0.0.1
+  port: 8080 # 服务绑定的端口，不写默认是8080
+  servlet:
+    context-path: /demo # 服务的路径，不写默认为空
+  tomcat:
+    max-threads: 100
+    uri-encoding: UTF-8
+
+spring:
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    mode: LEGACYHTML5
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+
+  #profiles:
+    #active: prod
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/test
+    username: root
+    password: root

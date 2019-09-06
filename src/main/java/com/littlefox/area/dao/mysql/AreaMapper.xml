@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.littlefox.invest.dao.AreaMapper">
+    <resultMap id="provinceDependMap" type="com.littlefox.depend.model.ProvinceDepend">
+        <result property="code" column="vc_area_id"></result>
+        <result property="key" column="vc_area_name"></result>
+        <result property="value" column="vc_name"></result>
+        <result property="level" column="l_level"></result>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        d.vc_area_id ,
+        d.vc_area_name ,
+        d2.vc_name ,
+        d.l_level
+    </sql>
+
+    <!-- 查询所有省份市 -->
+    <select id="findProvinceList" parameterType="java.util.Map" resultMap="provinceDependMap">
+        select
+        <include refid="Base_Column_List"/>
+        FROM
+        d_area d ,
+        (SELECT sl.vc_code,sl.vc_name FROM sys_lang sl WHERE sl.e_lang_type = #{langType,jdbcType=VARCHAR}) d2
+        WHERE
+        d2.vc_code = d.vc_area_name
+    </select>
+
+    <!-- 根据省份查询市 -->
+    <select id="findProvinceListByIdAndCountry" parameterType="java.util.Map" resultMap="provinceDependMap">
+        select
+        <include refid="Base_Column_List"/>
+        FROM
+        d_area d ,
+        (SELECT sl.vc_code,sl.vc_name FROM sys_lang sl WHERE sl.e_lang_type = #{langType,jdbcType=VARCHAR}) d2
+        <where>
+            d2.vc_code = d.vc_area_name
+            AND d.l_level = #{level,jdbcType=VARCHAR}
+            <if test='id != null and id != ""'>
+                AND d.vc_area_id != #{id,jdbcType=VARCHAR}
+                AND SUBSTRING(d.vc_area_id,1,#{len}) = #{id,jdbcType=VARCHAR}
+            </if>
+        </where>
+
+    </select>
+</mapper>
