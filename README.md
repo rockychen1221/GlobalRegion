@@ -1,3 +1,5 @@
+[![GitHub license](https://img.shields.io/github/license/rockychen1221/GlobalRegion)](https://github.com/rockychen1221/GlobalRegion/blob/master/LICENSE)
+
 # GlobalRegion 简介
 
 世界各国是指世界上各个国家，截至2019年，世界上共有233个国家和地区，其中国家有195个，地区有38个。
@@ -18,7 +20,7 @@
 
 ## 如何运行
 * Step 1. 在您的数据库中执行`sql`目录中的脚本，`d_area`为地区层级，`sys_lang`为国际化，更换应用数据库连接信息
-* Step 2. 使用`mvn spring-boot:run`,启动后浏览器访问`http://localhost:8080/demo/area/init.do`
+* Step 2. 使用`mvn spring-boot:run`,启动后浏览器访问`http://localhost:8080`
 
 ## 如何接入使用
 * Step 1. 自定义地区下拉元素页面布局，根据实际页面比例预留长度，声明下拉元素ID（需在Step 3 初始化传入，如使用默认ID:fromArea，即可不传）

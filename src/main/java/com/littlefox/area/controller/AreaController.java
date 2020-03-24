@@ -18,11 +18,6 @@ public class AreaController {
     @Resource
     private AreaService areaService;
 
-    @RequestMapping(value = "/init.do", method = RequestMethod.GET)
-    public String init(){
-        return "area/main";
-    }
-
     /**
      * 查询国家省份地区下拉
      *
@@ -34,8 +29,7 @@ public class AreaController {
     @ResponseBody
     public List<Area> selectAreaList( @ModelAttribute("areaId") String areaId, @ModelAttribute("level") String level) {
         String langType = "zh_CN";
-        List<Area> areaList = areaService.selectAreaList(areaId, level, langType);
-        return areaList;
+        return areaService.selectAreaList(areaId, level, langType);
     }
 
 }

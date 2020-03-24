@@ -2,7 +2,7 @@ var Area = function () {
 
     var _DataAPi = new Object(1);
     // 地区
-    _DataAPi.areaListSelect = "selectAreaList.json";
+    _DataAPi.areaListSelect = "area/selectAreaList.json";
 
     /**
      * 初始化 Bootstrap Select插件

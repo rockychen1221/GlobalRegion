@@ -1,0 +1,9 @@
+com/littlefox/area/Application$MyMvcConfig.class
+com/littlefox/area/model/Area.class
+com/littlefox/area/Application.class
+com/littlefox/area/service/imps/AreaServiceImpl$1.class
+com/littlefox/area/dao/AreaMapper.class
+com/littlefox/area/service/imps/AreaServiceImpl.class
+com/littlefox/area/service/AreaService.class
+com/littlefox/area/controller/AreaController.class
+com/littlefox/area/model/Area$AreaBuilder.class

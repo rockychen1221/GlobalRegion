@@ -18,9 +18,6 @@ public class AreaServiceImpl implements AreaService {
 
     @Override
     public List<Area> selectAreaList(String id, String level, String langType) {
-        String zero = "0";
-
-        //Assert.notNull(entities, "Cannot insert 'null' as a List.");
 
         Map<String, String> params = new HashMap<String, String>(4){{
             put("id", id);
