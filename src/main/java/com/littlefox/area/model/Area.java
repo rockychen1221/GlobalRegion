@@ -1,15 +1,18 @@
 
 package com.littlefox.area.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
+/**
+ * 地区
+ * @author rockychen
+ */
 public class Area {
     /**
      * code

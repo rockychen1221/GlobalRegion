@@ -10,6 +10,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 地区Service
+ * @author rockychen
+ */
 @Service
 public class AreaServiceImpl implements AreaService {
 

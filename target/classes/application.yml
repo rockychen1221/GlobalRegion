@@ -22,13 +22,28 @@ spring:
     servlet:
       content-type: text/html
 
-  #profiles:
-    #active: prod
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/invest_imps?serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true
-    username: root
-    password: root
+    #  驱动
+    driver-class-name: org.h2.Driver
+    # h2 内存数据库 内存模式连接配置 库名: area
+    url: jdbc:h2:mem:area
+    # 初始化数据表 DDL
+    schema: classpath:/schema.sql
+    #  初始化数据 DML
+    data: classpath:/data.sql
+    username: sa
+    password: sa
+  h2:
+    #    开启console 访问 默认false
+    console:
+      enabled: true
+      settings:
+        #      开启h2 console 跟踪 方便调试  默认 false
+        trace: true
+        #      允许console 远程访问 默认false
+        web-allow-others: true
+      #  h2 访问路径上下文
+      path: /h2-console
 
 # [Mybatis]
 mybatis:

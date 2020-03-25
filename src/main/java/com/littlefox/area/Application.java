@@ -20,10 +20,9 @@ public class Application {
 
     @Configuration
     public class MyMvcConfig implements WebMvcConfigurer {
-        //一系列实现方法
         @Override
         public void addViewControllers(ViewControllerRegistry registry) {
-            registry.addViewController("/").setViewName("area/main");
+            registry.addViewController("/").setViewName("area/index");
         }
     }
 

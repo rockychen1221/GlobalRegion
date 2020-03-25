@@ -11,6 +11,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.Resource;
 import java.util.List;
 
+/**
+ * 地区Controller
+ * @author rockychen
+ */
 @Controller
 @RequestMapping("/area")
 public class AreaController {

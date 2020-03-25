@@ -6,6 +6,10 @@ import com.littlefox.area.model.Area;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 地区Mapper
+ * @author rockychen
+ */
 public interface AreaMapper {
 
     /**
